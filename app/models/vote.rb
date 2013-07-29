@@ -1,4 +1,4 @@
 class Vote < ActiveRecord::Base
-  belong_to :idea
-  belong_to :voter, class_name: "User"
+  belongs_to :idea
+  belongs_to :voter, class_name: "User"
 end
