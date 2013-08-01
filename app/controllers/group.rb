@@ -14,15 +14,20 @@ end
 
 post '/group/add_member' do
   @group = Group.find_by_group_code(params[:group][:code])
-  @group.users << current_user
-
-  redirect "/group/#{@group.id}/home"
+  if @group 
+    @group.users << current_user
+    redirect "/group/#{@group.id}/home"
+  else
+    erb :_lol_nope
+  end
 end
 
 post '/group/:group_id/remove_member' do
   @group = Group.find(params[:group_id])
   @user = User.find(params[:user][:id].to_i)
   @group.users.destroy(@user.id)
+  @new_group_code = @group.create_group_code
+  @group.update_attributes(group_code: @new_group_code)
 
   erb :group_home
 end
