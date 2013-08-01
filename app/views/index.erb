@@ -1,28 +1,30 @@
 <div class="container">
-  <p>Hello, there!</p>
+  
+<% if current_user  %>
+  <h1>Hello there, <%= current_user.name %>!</h1>
+<% else %>
+  <h1>Hello there!</h1>
+  <h1>Sign up</h1>
+    <form action="/user/create" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="user[name]" placeholder="name">
+      <label for="email">Email:</label>
+      <input type="text" name="user[email]" placeholder="user@email.com">
+      <!-- <label for="group">Group:</label>
+      <input type="text" name="user[group]" placeholder="enter group name"> -->
+      <label for="password">Password:</label>
+      <input type="password" name="user[password]" placeholder="enter password">
+      <input type="submit" value="Sign up!">
+    </form> 
 
-
-<h1>Sign up</h1>
-  <form action="/user/create" method="POST">
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="user[name]" placeholder="name">
-    <label for="email">Email:</label>
-    <input type="text" name="user[email]" placeholder="user@email.com">
-    <!-- <label for="group">Group:</label>
-    <input type="text" name="user[group]" placeholder="enter group name"> -->
-    <label for="password">Password:</label>
-    <input type="password" name="user[password]" placeholder="enter password">
-    <input type="submit" value="Sign up!">
-  </form> 
-
-<h1>Sign in</h1>
-  <form action="/user/login" method="POST">
-    <label for="name">Email:</label>
-    <input type="text" id="name" name="user[email]" placeholder="user@email.com">
-    <label for="password">Password:</label>
-    <input type="password" name="user[password]" placeholder="enter password">
-    <input type="submit" value="Sign in!">
-  </form>
-
+  <h1>Sign in</h1>
+    <form action="/user/login" method="POST">
+      <label for="name">Email:</label>
+      <input type="text" id="name" name="user[email]" placeholder="user@email.com">
+      <label for="password">Password:</label>
+      <input type="password" name="user[password]" placeholder="enter password">
+      <input type="submit" value="Sign in!">
+    </form>
+<% end %>
 </div>
 

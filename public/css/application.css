@@ -13,6 +13,12 @@ body {
   margin-left: 200px;
 }
 
+/*elements*/
+.code {
+  background-color: yellow;
+  width: 75px;
+}
+
 
 /*layout nav bar*/
 

@@ -1,0 +1,14 @@
+<h1><%= @group.name %></h1>
+
+<p>Group admin:</p>
+<a href="/user/profile/<%= @group.admin.id %>"><%= @group.admin.name %></a>
+
+<p>Users:</p>
+<% @group.users.each do |user| %>
+  <a href="/user/profile/<%= user.id %>"><%= user.name %></a>
+<% end %>
+
+<% if current_user.id == @group.admin.id %>
+  <p>Give this code to invite users to your group:</p>
+  <div class="code"><%= @group.group_code %></div> 
+<% end %>
