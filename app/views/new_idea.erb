@@ -1,13 +1,12 @@
 <h1>Submit a new idea</h1>
 
-<form action='/idea/new' method='POST'>
-  <select name="user[id]">
+<form action='/idea/create' method='POST'>
+  <select name="idea[group_id]">
     <% @groups.each do |group| %>
       <option value="<%= group.id %>"><%= group.name %></option>
     <% end %>
   </select>
-
-
+  <br>
   <label for="idea_input">Enter your idea:</label>
   <br>
   <textarea id="idea_input" name="idea[name]"></textarea>

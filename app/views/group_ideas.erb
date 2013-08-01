@@ -1,0 +1,17 @@
+<h1><%= @group.name  %> Group's Ideas:</h1>
+
+<% @group.ideas.each do |idea| %>
+  <%= idea.name %>
+  
+  <%  if (@group.votes_needed - idea.vote_count) > 0 %> 
+    <p>This idea needs </p><%= @group.votes_needed - idea.vote_count %><p> more ideas to get a response.
+  <% else %>
+    <p>This idea needs a response!</p>
+  <% end %>
+  
+  <p>Number of votes:</p><%= idea.votes.count %>
+  <form action='/idea/<%= @group.id %>/<%= idea.id %>/vote' method="POST">
+    <input type="submit" value="vote">
+  </form>
+  <br>
+<% end %>

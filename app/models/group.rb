@@ -9,4 +9,8 @@ class Group < ActiveRecord::Base
     self.group_code = Array.new(8){[*'0'..'9', *'a'..'z', *'A'..'Z'].sample}.join
   end
 
+  def votes_needed
+    self.users.count/2
+  end
+
 end

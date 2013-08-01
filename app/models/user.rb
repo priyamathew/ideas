@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   has_many :ideas, foreign_key: "creator_id"
   has_many :votes, foreign_key: "voter_id"
   has_many :usergroups
-  has_many :admingroups, :class_name => "Group", :foreign_key => :admin_id
   has_many :groups, through: :usergroups
+  has_many :admingroups, :class_name => "Group", :foreign_key => :admin_id
   validates_uniqueness_of :email
   validates_presence_of :email, :name, :password
 

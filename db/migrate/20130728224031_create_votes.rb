@@ -5,5 +5,7 @@ class CreateVotes < ActiveRecord::Migration
       t.belongs_to :voter
       t.timestamps
     end
+
+    add_index :votes, [:voter_id, :idea_id], :unique => true
   end
 end

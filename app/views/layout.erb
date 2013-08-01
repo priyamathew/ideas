@@ -21,12 +21,13 @@
   <nav>
     <p class="brand"><a href="/">IDEAS</a></p>
     <ul>
-      <li><a href="/about">About</a></li>
-      <li><a href="/pricing">Pricing</a></li>
       <% if current_user %>
         <li><a class="idea" href="/idea/create">New Idea</a></li>
         <li><a href="/user/profile/<%= @current_user.id %>">Profile</a></li>
         <li><a id="sign out" href="/user/logout">Sign Out</a></li>
+      <% else %>
+        <li><a href="/about">About</a></li>
+        <li><a href="/pricing">Pricing</a></li>
       <% end %>
     </ul>
     </nav>
