@@ -6,9 +6,21 @@
 <p>Users:</p>
 <% @group.users.each do |user| %>
   <a href="/user/profile/<%= user.id %>"><%= user.name %></a>
+  <br>
 <% end %>
 
 <% if current_user.id == @group.admin.id %>
   <p>Give this code to invite users to your group:</p>
   <div class="code"><%= @group.group_code %></div> 
+
+  <p>Remove a user from the group</p>
+
+  <form action="/group/<%= @group.id  %>/remove_member" method="POST">
+    <select name="user[id]">
+    <% @group.users.each do |user| %>
+      <option value="<%= user.id %>"><%= user.name %></option>
+    <% end %>
+    </select>
+  <input type="submit" value="LOLNOPE">
+  </form>
 <% end %>
