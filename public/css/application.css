@@ -55,6 +55,10 @@ li a:hover {
   color: yellow;
 }
 
+li a.idea {
+  color: yellow;
+}
+
 .brand a {
   font-size: 20px;
   padding-left: 10px;
