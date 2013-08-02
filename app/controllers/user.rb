@@ -1,6 +1,5 @@
 #sign up a new user
 post '/user/create' do
-  p params
   @user = User.new(params[:user])
   if @user.save
     session[:id] = @user.id
@@ -21,8 +20,7 @@ end
 #sign-in 
 post '/user/login' do
   @user = User.find_by_email(params[:user][:email])
-  p @user
-  p @user.authenticate(params[:user][:password])
+  @user.authenticate(params[:user][:password])
   if @user && @user.authenticate(params[:user][:password])
     session[:id] = @user.id
     redirect "/user/profile/#{@user.id}"

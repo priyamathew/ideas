@@ -14,8 +14,7 @@ th {
 body {
   margin-left: 250px;
   background-color: #E0E0E0;
-  /*font-family: 'Dosis', sans-serif;*/
-  /*font-family: 'Imprima', sans-serif;*/
+  font-family: 'Imprima', sans-serif;
 }
 
 /*elements*/
@@ -121,8 +120,9 @@ li a.idea {
 .brand a {
   font-size: 50px;
   padding-left: 10px;
-  color: white;; 
+  color: white; 
   text-decoration: none;
+  font-family: 'Dosis', sans-serif;
 }
 
 /*sign in form*/
@@ -136,4 +136,37 @@ h2 {
   color: #08c;
   font-family: 'Archivo Narrow', sans-serif; 
   text-transform: uppercase;
+}
+
+/*idea display*/
+
+.idea {
+  border: 1px solid gray;
+  border-radius: 6px;
+  padding: 10px;
+  width: 300px;
+  box-shadow: inset 0px 0px 5px 1px black;
+  background-color: white;
+}
+
+.vote_count {
+  color: black;
+  font-size: 30px;
+  font-family: 'Imprima', sans-serif;
+}
+
+.vote_button {
+  float: right;
+}
+
+.new-idea-button {
+  color: yellow;
+}
+
+.idea-text {
+  background-color: #FFFF99;
+  font-size: 20px;
+  box-shadow: inset 0px 0px 5px 1px black;
+  border-radius: 6px;
+  padding: 5px;
 }

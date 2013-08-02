@@ -10,7 +10,7 @@ class Group < ActiveRecord::Base
   end
 
   def votes_needed
-    self.users.count/2
+    self.users.count
   end
 
 end

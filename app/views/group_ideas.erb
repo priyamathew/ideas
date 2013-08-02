@@ -1,18 +1,23 @@
-<h1><%= @group.name  %> Group's Ideas:</h1>
+<h1><%= @group.name  %> Group Ideas:</h1>
 
 <% @group.ideas.each do |idea| %>
-  <%= idea.name %>
+  <div class="idea">
+  <h2> The idea is: </h2>
+  <p class="idea-text">"<%= @group.name %> should...<%= idea.name %>"<p>
+  <h6>Idea from:</p><%= idea.creator.name %></h6>
+  <h6>Created at:</p><%= idea.created_at %></h6>
   
+  <h2>Number of Votes:</h2><span class="vote_count"><%= idea.vote_count %></span>
+  <form class="vote_button" action='/idea/<%= @group.id %>/<%= idea.id %>/vote' method="POST">
+    <input type="submit" value="vote">
+  </form>
+
   <%  if (@group.votes_needed - idea.vote_count) > 0 %> 
     <h2>This idea needs </p><%= @group.votes_needed - idea.vote_count %><h2> more ideas to get a response.
   <% else %>
     <h2>This idea needs a response!</h2>
   <% end %>
-  
-  <h2>Number of votes:</h2><%= idea.votes.count %>
-  <form action='/idea/<%= @group.id %>/<%= idea.id %>/vote' method="POST">
-    <input type="submit" value="vote">
-  </form>
+  </div>
   <br>
 <% end %>
 
