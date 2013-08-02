@@ -22,5 +22,5 @@ end
 get '/group/:group_id/ideas' do
   @group = Group.find(params[:group_id])
 
-  erb :group_ideas
+  erb :group_home
 end

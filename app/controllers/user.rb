@@ -20,7 +20,7 @@ end
 #sign-in 
 post '/user/login' do
   @user = User.find_by_email(params[:user][:email])
-  @user.authenticate(params[:user][:password])
+  
   if @user && @user.authenticate(params[:user][:password])
     session[:id] = @user.id
     redirect "/user/profile/#{@user.id}"
