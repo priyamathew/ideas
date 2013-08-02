@@ -4,14 +4,15 @@
   <%= idea.name %>
   
   <%  if (@group.votes_needed - idea.vote_count) > 0 %> 
-    <p>This idea needs </p><%= @group.votes_needed - idea.vote_count %><p> more ideas to get a response.
+    <h2>This idea needs </p><%= @group.votes_needed - idea.vote_count %><h2> more ideas to get a response.
   <% else %>
-    <p>This idea needs a response!</p>
+    <h2>This idea needs a response!</h2>
   <% end %>
   
-  <p>Number of votes:</p><%= idea.votes.count %>
+  <h2>Number of votes:</h2><%= idea.votes.count %>
   <form action='/idea/<%= @group.id %>/<%= idea.id %>/vote' method="POST">
     <input type="submit" value="vote">
   </form>
   <br>
 <% end %>
+

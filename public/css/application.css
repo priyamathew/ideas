@@ -2,21 +2,80 @@
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  background-color: #E8E8E8;
+  border: 1px solid #333;
 }
+
 th {
   text-align: left;
 }
 
 /*homepage layout*/
 body {
-  margin-left: 200px;
+  margin-left: 250px;
+  background-color: #E0E0E0;
+  /*font-family: 'Dosis', sans-serif;*/
+  /*font-family: 'Imprima', sans-serif;*/
 }
 
 /*elements*/
 .code {
   background-color: yellow;
-  width: 75px;
+  width: 110px;
+  font-size: 25px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}
+
+/*forms*/
+
+/*create a group*/
+
+.org_name {
+  width: 225px;
+}
+
+
+.entry-form {
+  /*border: 1px solid black;*/
+  padding: 20px 20px;
+  width: 250px;
+  border: 1px solid black ;
+  border-radius: 3px;
+  box-shadow: inset 0px 0px 5px 1px black;
+  background-color: #C0C0C0;
+  position: absolute;
+  top: 100px;
+  left: 200 px;
+  border-radius: 6px;
+}
+
+input {
+  margin: 3px 10px 3px 10px;
+  border-radius: 3px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+}
+
+input[type=password] {
+  width: 121px;
+}
+
+input[type=email] {
+  width: 208px;
+}
+
+input[type=submit] {
+  background-color: #08c;
+  box-shadow: inset 0px 0px 5px 1px black;
+  text-transform: uppercase;
+  border-radius: 6px;
+  color: white;
 }
 
 
@@ -28,7 +87,7 @@ nav {
   top: 0;
   left: 0;
   background-color: #08c;
-  width: 150px;
+  width: 200px;
   height: 100%;
   text-align: left;
   border-right: rgb(215,221,219);
@@ -60,7 +119,7 @@ li a.idea {
 }
 
 .brand a {
-  font-size: 20px;
+  font-size: 50px;
   padding-left: 10px;
   color: white;; 
   text-decoration: none;
@@ -69,4 +128,12 @@ li a.idea {
 /*sign in form*/
 h1  {
   color: #08c;
+  font-family: 'Archivo Narrow', sans-serif;
+  text-transform: uppercase;
+}
+
+h2 {
+  color: #08c;
+  font-family: 'Archivo Narrow', sans-serif; 
+  text-transform: uppercase;
 }
